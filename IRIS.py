@@ -49,8 +49,20 @@ def home():
 def IrisTypes():
     return render_template('IrisTypes.html')
 
-@app.route('/Predictor')
+@app.route('/Predictor', methods= ["GET", "POST"])
 def Predictor():
+    if request.method == "POST":
+        data = request.get_json()  # Get JSON data from the request
+        sepal_length = float(data["sepal_length"])
+        sepal_width = float(data["sepal_width"])
+        petal_length = float(data["petal_length"])
+        petal_width = float(data["petal_width"])
+
+        prediction = model.predict([[sepal_length, sepal_width, petal_length, petal_width]])
+        prediction = prediction[0]  # Assuming prediction is an array
+
+        return jsonify({"prediction": prediction})
+
     return render_template('modelpredict.html')
 
 
