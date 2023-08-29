@@ -69,7 +69,7 @@ def Predictor():
 
 @app.route('/Visuals')
 def Visuals():
-    return render_template('VisualsIris.html')
+    return render_template('Visuals.html')
 
 if __name__ == '__main__':
     app.run()
