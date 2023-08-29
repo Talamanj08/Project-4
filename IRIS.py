@@ -1,12 +1,16 @@
 #http://localhost:5000/
 
-from flask import Flask, g, render_template, jsonify, json
+from flask import Flask, g, render_template, jsonify, json, request
 import psycopg2
 from config import user, password, host, port, database 
 import configparser
+import joblib
 
 # Set up the app
 app= Flask(__name__)
+
+# Load Machine Learning Model 
+model= joblib.load("model.joblib")
 
 # Load configuration
 app.config.from_mapping(
@@ -48,6 +52,8 @@ def IrisTypes():
 @app.route('/Predictor')
 def Predictor():
     return render_template('modelpredict.html')
+
+
 
 @app.route('/Visuals')
 def Visuals():
