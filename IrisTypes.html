@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            background-image: url('https://gardenerspath.com/wp-content/uploads/2022/01/Best-Iris-Varieties-FB.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .content-container {
+            margin-left: 8%;
+            margin-top: 5%;
+        }
+
+        /* Style for the container of buttons */
+        .button-group {
+            display: flex; 
+            gap: 10px; 
+            width: 400px; 
+        }
+
+        /* Style for all buttons */
+        .action-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white; 
+            color: black;
+            border: 2px solid white; 
+            padding: 11px 15px;
+            font-size: 11px;
+            cursor: pointer;
+            border-radius: 4px;
+            flex: 1; 
+            transition: background-color 0.3s ease; 
+        }
+
+       
+        .action-button:hover {
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+
+        /* Style for all icons */
+        .action-button i {
+            margin-right: 8px; 
+            font-size: 20px;
+        }
+
+        .bordered-image {
+            border: 2px solid black; 
+            padding: 5px; 
+            margin: 10px;
+        }
+        
+    
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="content-container">
+        <h1>Welcome to our Project 4!</h1>
+        <p>Hello</p>
+        <div class="button-group">
+            <a href="{{ url_for('home') }}">
+                <button class="action-button">
+                    <i class="fas fa-home" style="color: black;"></i> <!-- Add the Font Awesome icon for home -->
+                    Home
+                </button>
+            </a>      
+
+            <a href="https://github.com/Talamanj08/Project-4" target="_blank">
+                <button class="action-button">
+                    <i class="fab fa-github" style="color: black;"></i>
+                    GitHub
+                </button>
+            </a>
+
+            <a href="{{ url_for('IrisTypes') }}" target="_blank">
+                <button class="action-button">
+                    <i class="fa-regular fa-flower"></i>
+                    Iris Types
+                </button>
+            </a>
+
+            <a href="{{ url_for('Predictor') }}" target="_blank">
+                <button class="action-button">
+                    <i class="fab fa-github" style="color: black;"></i>
+                    Model Predictor
+                </button>
+            </a>
+
+            <a href="{{ url_for('Visuals') }}" target="_blank">
+                <button class="action-button">
+                    <i class="fab fa-github" style="color: black;"></i>
+                    Visuals
+                </button>
+            </a>
+
+        </div>
+        <div>
+            <p>There are 3 different types of Iris Flowers that this Model can identify </p>
+            <p>Iris-setosa, Iris-virginica, and the Iris-versicolor   </p>
+            <p>Iris-setosas have an average Sepal Length of 5CM, an average Sepal Width of 3.4CM, an average Petal Length of 1.5CM, and an average Petal Width of 0.2CM  </p>
+            <p>Iris-versicolors have an average Sepal Length of 6CM, an average Sepal Width of 2.8CM, an average Petal Length of 4.3CM, and an average Petal Width of 1.3CM  </p>
+            <p>Iris-virginicas have an average Sepal Length of 6.6CM, an average Sepal Width of 3CM, an average Petal Length of 5.6CM, and an average Petal Width of 2CM  </p>
+            <p> </p>
+            <p> </p>
+        </div>
+        
+    </div>
+    <h2>Iris Flowers</h2>
+
+    <img src="Images/Iris_setosa.jpg" alt="Image 1" class="bordered-image">
+
+    <img src="Images/Iris_versicolor.jpg" alt="Image 2" class="bordered-image">
+
+    <img src="Images/Iris_virginica.jpg" alt="Image 3" class="bordered-image">
+    
+</body>
+</html>
