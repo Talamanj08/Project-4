@@ -63,15 +63,33 @@
 </head>
 <body>
     <div class="content-container">
-        <h1>Welcome to our Project 4!</h1>
-        <p>Hello</p>
+        <h1>Iris Flower Classification!</h1>
         <div class="button-group">
             <a href="{{ url_for('home') }}">
                 <button class="action-button">
-                    <i class="fas fa-home" style="color: black;"></i> <!-- Add the Font Awesome icon for home -->
+                    <i class="fas fa-home" style="color: black;"></i> 
                     Home
                 </button>
             </a>      
+
+            <a href="{{ url_for('IrisTypes') }}" target="_blank">
+                <button class="action-button">
+                    <i class="fas fa-flower flower-icon"></i> 
+                    Iris Types
+                </button>
+            </a>
+
+            <a href="{{ url_for('Predictor') }}" target="_blank">
+                <button class="action-button">
+                    Model Predictor
+                </button>
+            </a>
+
+            <a href="{{ url_for('Visuals') }}" target="_blank">
+                <button class="action-button">
+                    Tableau Visuals
+                </button>
+            </a>
 
             <a href="https://github.com/Talamanj08/Project-4" target="_blank">
                 <button class="action-button">
@@ -79,34 +97,12 @@
                     GitHub
                 </button>
             </a>
-
-            <a href="{{ url_for('IrisTypes') }}" target="_blank">
-                <button class="action-button">
-                    <i class="fa-regular fa-flower"></i>
-                    Iris Types
-                </button>
-            </a>
-
-            <a href="{{ url_for('Predictor') }}" target="_blank">
-                <button class="action-button">
-                    <i class="fab fa-github" style="color: black;"></i>
-                    Model Predictor
-                </button>
-            </a>
-
-            <a href="{{ url_for('Visuals') }}" target="_blank">
-                <button class="action-button">
-                    <i class="fab fa-github" style="color: black;"></i>
-                    Visuals
-                </button>
-            </a>
-
         </div>
         <div>
             <p>There are 3 different types of Iris Flowers that this Model can identify </p>
-            <p>Iris-setosa, Iris-virginica, and the Iris-versicolor   </p>
-            <p>Iris-setosas have an average Sepal Length of 5CM, an average Sepal Width of 3.4CM, an average Petal Length of 1.5CM, and an average Petal Width of 0.2CM  </p>
+            <p>Iris-versicolor, Iris-setosa, and the Iris-virginica    </p>
             <p>Iris-versicolors have an average Sepal Length of 6CM, an average Sepal Width of 2.8CM, an average Petal Length of 4.3CM, and an average Petal Width of 1.3CM  </p>
+            <p>Iris-setosas have an average Sepal Length of 5CM, an average Sepal Width of 3.4CM, an average Petal Length of 1.5CM, and an average Petal Width of 0.2CM  </p>
             <p>Iris-virginicas have an average Sepal Length of 6.6CM, an average Sepal Width of 3CM, an average Petal Length of 5.6CM, and an average Petal Width of 2CM  </p>
             <p> </p>
             <p> </p>
@@ -115,11 +111,7 @@
     </div>
     <h2>Iris Flowers</h2>
 
-    <img src="Images/Iris_setosa.jpg" alt="Image 1" class="bordered-image">
-
-    <img src="Images/Iris_versicolor.jpg" alt="Image 2" class="bordered-image">
-
-    <img src="Images/Iris_virginica.jpg" alt="Image 3" class="bordered-image">
+    <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*7bnLKsChXq94QjtAiRn40w.png" alt="Image 1" class="bordered-image">
     
 </body>
 </html>
