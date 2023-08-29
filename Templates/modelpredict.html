@@ -93,14 +93,14 @@
         <div>
             <h2>Predict Iris Flower Type</h2>
             <form id="iris-prediction-form">
-                <label for="sepal-length">Sepal Length:</label>
-                <input type="text" id="sepal-length" name="sepal-length"><br><br>
-                <label for="sepal-width">Sepal Width:</label>
-                <input type="text" id="sepal-width" name="sepal-width"><br><br>
-                <label for="petal-length">Petal Length:</label>
-                <input type="text" id="petal-length" name="petal-length"><br><br>
-                <label for="petal-width">Petal Width:</label>
-                <input type="text" id="petal-width" name="petal-width"><br><br>
+                <label for="sepal_length">Sepal Length:</label>
+                <input type="text" id="sepal_length" name="sepal_length"><br><br>
+                <label for="sepal_width">Sepal Width:</label>
+                <input type="text" id="sepal_width" name="sepal_width"><br><br>
+                <label for="petal_length">Petal Length:</label>
+                <input type="text" id="petal_length" name="petal_length"><br><br>
+                <label for="petal_width">Petal Width:</label>
+                <input type="text" id="petal_width" name="petal_width"><br><br>
                 <button type="button" id="predict-button" class="action-button">
                     Predict Iris Type
                 </button>
@@ -108,5 +108,42 @@
             <p id="prediction-result"></p>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const predictButton = document.getElementById("predict-button");
+            const predictionResult = document.getElementById("prediction-result");
+            const form = document.getElementById("iris-prediction-form");
+
+            predictButton.addEventListener("click", function () {
+                const sepalLength = parseFloat(document.getElementById("sepal_length").value);
+                const sepalWidth = parseFloat(document.getElementById("sepal_width").value);
+                const petalLength = parseFloat(document.getElementById("petal_length").value);
+                const petalWidth = parseFloat(document.getElementById("petal_width").value);
+
+                // Send the input values to the server using Fetch API
+                fetch("/Predictor", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        sepal_length: sepalLength,
+                        sepal_width: sepalWidth,
+                        petal_length: petalLength,
+                        petal_width: petalWidth
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the prediction result
+                    predictionResult.textContent = `Prediction: ${data.prediction}`;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    predictionResult.textContent = "An error occurred during prediction.";
+                });
+            });
+        });
+    </script>
 </body>
 </html>
