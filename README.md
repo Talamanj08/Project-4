@@ -29,3 +29,6 @@ Based on the measurements of the key features of the flower (the petal width and
 - flask
 - html
 - 
+
+# references: 
+- JobLib usage for the machine learning model: https://maze-runner.medium.com/deploying-the-ml-model-to-the-flask-with-joblib-53f313d24003
