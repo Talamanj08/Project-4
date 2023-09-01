@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tableau Visuals</title>
+    <title>Visuals</title>
     <style>
         body {
             background-image: url('https://gardenerspath.com/wp-content/uploads/2022/01/Best-Iris-Varieties-FB.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 130vh;
+            height: 160vh;
             color: white;
         }
 
         .content-container {
-            margin-left: 8%;
-            margin-top: 3%;
+            margin-left: 1%;
+            margin-top: 5%;
         }
 
         /* Style for the container of buttons */
@@ -56,13 +56,29 @@
             padding: 5px; 
             margin: 10px;
         }
+        
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            width: 800px; /* Match the width of the image */
+            margin-left: 22.5%; /* Center the container */
+        }
 
+        .side-by-side-images {
+            display: flex;
+            justify-content: center; /* Center the images horizontally */
+            gap: 10px;
+            margin-top: 20px;
+            margin-left: 0%; /* Adjust this margin to center the images */
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="content-container" style="text-align: center;">
-        <h1>Tableau Visuals</h1>
+        <h1 style="text-align: center;">Visuals</h1>
         <div class="button-group">
             <a href="{{ url_for('home') }}">
                 <button class="action-button">
@@ -90,7 +106,7 @@
             <a href="{{ url_for('Visuals') }}" target="_blank">
                 <button class="action-button">
                     <i class="fa-solid fa-chart-simple"style="color: #5a40e0;"></i>
-                    Tableau Visuals
+                    Visuals
                 </button>
             </a>
 
@@ -102,9 +118,16 @@
                 </button>
             </a>
         </div>
-    <div style="text-align: center;">
-        <img src="{{ url_for('static', filename='Species_AVG_measurements.png') }}" alt="Image 1" class="bordered-image" width="1000" height="550">
-    </div>
+        <div class="content-container" style="text-align: center;">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='Species_AVG_measurements.png') }}" alt="Image 1" class="bordered-image" width="800" height="475">
+            </div>
+            
+            <div class="side-by-side-images">
+                <img src="{{ url_for('static', filename='Scatterplot_Classification.png') }}" alt="Image 2" class="bordered-image" width="600" height="475">
+                <img src="{{ url_for('static', filename='Features_Importances.png') }}" alt="Image 3" class="bordered-image" width="600" height="475">
+            </div>
+        </div>
     
 </body>
 </html>

@@ -13,7 +13,7 @@
         }
 
         .content-container {
-            margin-left: 8%;
+            margin-left: 4%;
             margin-top: 5%;
         }
 
@@ -22,7 +22,8 @@
             display: flex;
             justify-content: center; 
             gap: 10px;
-            margin-top: 20px; 
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         
         /* Style for all buttons */
@@ -72,7 +73,7 @@
 </head>
 <body>
     <div class="content-container" style="text-align: center;">
-        <h1>Iris Flower Classification!</h1>
+        <h1 style="text-align: center;">Iris Flower Classification!</h1>
         <div class="button-group">
             <a href="{{ url_for('home') }}">
                 <button class="action-button">
@@ -100,7 +101,7 @@
             <a href="{{ url_for('Visuals') }}" target="_blank">
                 <button class="action-button">
                     <i class="fa-solid fa-chart-simple"style="color: #5a40e0;"></i>
-                    Tableau Visuals
+                    Visuals
                 </button>
             </a>
 
