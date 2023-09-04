@@ -28,9 +28,9 @@ Based on the measurements of the key features of the flower (the petal width and
 
 # web interface stuff:
 - For our web interface, we used HTML/CSS.
--We set up the flask app to connected to our SQL Database that holds all the Iris Flower data.
--Most of the routes in the app were pretty basic besides our Model Predictor tab, which was coded to take user given measurements and provide a predicted Iris Species using our Random Forest model based off of those inputs given.
--We used joblib to connect our machine learning model from our notebook to our app
+- We set up the flask app to connected to our SQL Database that holds all the Iris Flower data.
+- Most of the routes in the app were pretty basic besides our Model Predictor tab, which was coded to take user given measurements and provide a predicted Iris Species using our Random Forest model based off of those inputs given.
+- We used joblib to connect our machine learning model from our notebook to our app
 
 # references: 
 - JobLib usage for the machine learning model: https://maze-runner.medium.com/deploying-the-ml-model-to-the-flask-with-joblib-53f313d24003
