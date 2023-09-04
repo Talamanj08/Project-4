@@ -16,7 +16,7 @@ Based on the measurements of the key features of the flower (the petal width and
 - Joblib
 
 # models we tried: 
-- random forest
+- We tried a random forest model with 0.4, 0.3, and 0.2 test sizes, but we decided to go with 0.4 since it yielded 98% accuracy, whereas the others yielded 100% accuracy.
 - logistic regression 
 
 # model we ended up using and why: 
